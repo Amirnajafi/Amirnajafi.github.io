@@ -103,6 +103,16 @@ $(function () {
           typeSpeed: 50,
         });
         $("#heroTitle").text(data.heroTItle)
+        $("#copyRight").text(data.copyRight)
+        $("#age").text(data.age)
+        $("#country").text(data.country)
+        $("#city").text(data.city)
+        $("#moibleSkills").text(data.moibleSkills)
+        $("#serverSkills").text(data.serverSkills)
+        $("#devopsSkills").text(data.devopsSkills)
+        $("#backendSkills").text(data.backendSkills)
+        $("#frontSkils").text(data.frontSkils)
+        $("#databaseSkills").text(data.databaseSkills)
 
       }
     })
