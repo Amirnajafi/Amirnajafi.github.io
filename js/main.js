@@ -33,187 +33,242 @@ $(function () {
 
   // page loading
   $(document).ready(function () {
-    var history = [
-      {
-        title: "Co-founder & CTO",
-        subtitle: "Rokao.com - London",
-        time: "Jul 2020 - present",
-        description: `
-        I've working as CTO and Full-Stack developer at Rokao team 
-        I also successfully manage over 5 person team member to Develop Rokao
-        and responsible to designing backend structure and develop apis 
-        and responsible to design Ui pattern and develop front-end with next.js
-        `,
-        link: "https://rokao.com"
-      },
-      {
-        title: "Co-founder",
-        subtitle: "Rojand - Germany",
-        time: "Jan 2018 - Apr 2021",
-        description: "I've responsible for (Mobile application development & manage Frontend team)  for company projects and we have successfuly delivery over 6 projects"
-      },
-      {
-        title: "Senior Mobile & Frontend Developer",
-        subtitle: "Ariana holding (onmiz.com) - Mashhad",
-        time: "Nov 2017 - Apr 2021",
-        description: "One of Ariana holding project is Miz mobile application that i responsible for develop and testing Mobile applicatoin with react native I've spend 2 years with ariana and we deliver a big and scale project",
-        link: "https://onmiz.com"
-      },
-      {
-        title: "Data Scientist and Software Engineer",
-        subtitle: "Financial Research and Technology - London",
-        time: "Nov 2015 - Apr 2021",
-        description: "As software engineer i responsible to create backend api's and manage databases (MongoDb)  we have done lot's of research about forex and Crypto currency in this years and build lots of expert and robots"
-      },
-      {
-        title: "Full-stack developer",
-        subtitle: "Zibasoo - Mashhad",
-        time: "Jan 2018 - Mar 2020",
-        description: "As full-stack developer i've responsible for Manager and build zibasoo backend and mobile application",
-        link: "https://www.f6s.com/zibasoo"
-      },
-      {
-        title: "Senior Ios developer",
-        subtitle: "HamrahDoctor - Mashhad",
-        time: "Sep 2017 - Jan 2017",
-        description: "As IOS developer I've responsible to build and develop HamrahDoctor ios application for iphone and Ipad in swift4",
-        link: "https://play.google.com/store/apps/details?id=com.hamrahdoctor.patient&hl=en&gl=US"
-      },
-      {
-        title: "Project Manager",
-        subtitle: "Win - Mashhad",
-        time: "May 2017 - Jul 2017",
-        description: "Win is a quiz game in android that I've Mange develop team and developing backend and manage database for them",
-        link: "https://cafebazaar.ir/app/com.spresaneh.app?l=en"
-      },
-      {
-        title: "Softwer Engineer",
-        subtitle: "Sorush Mehr Rezvan - Mashhad",
-        time: "Jun 2012 - May 2017",
-        description: "We have building lots of Augmented reality application with unity and C# also I've responsible to develop frontend and backend project (joomla , wodpress , php , jquery , html) projects in this company",
-        link: "https://www.smgroup.ir/"
-      }
-    ]
 
+    const client = contentful.createClient({
+      space: '9fx5ea1e5su3',
+      accessToken: 'pmRdKQDgVwWLiF7cHQk9D27bF6ZgBn8oG7EhsIGpjEc',
+    })
 
-
-
-    var projects = [
-      {
-        title: "Zibasoo artist",
-        subtitle: "Rojand inc",
-        time: "Sep 2018",
-        description: `
-            Zibasoo artist is mobile application for listed beauty saloons to manage thier booking times.
-          `,
-        link: "https://cafebazaar.ir/app/com.zibasoo_saloons.apps?l=en"
-      },
-      {
-        title: "Zibasoo",
-        subtitle: "Rojand inc",
-        time: "Sep 2018",
-        description: `
-            Zibasoo is mobile application that help womans to find best beauty salons in thier area and make them to book appointment with them.
-          `,
-        link: "https://cafebazaar.ir/app/com.zibasoo.apps?l=en"
-      },
-      {
-        title: "Miz Moile application",
-        subtitle: "ariana holding",
-        time: "Jan 2018",
-        description: `
-            Miz is an social network for business  , they can list their services to find by people around them easly with lots of more facily.
-          `,
-        link: "https://cafebazaar.ir/app/com.onmiz.app?l=en"
-      },
-      {
-        title: "Iran Central Bank Mobile Application",
-        subtitle: "Iran Central Bank",
-        time: "Jan 2014",
-        description: `
-          We've built a augmented reality mobile application for Iran Central Bank that scan money to check that is fake or not.
-        `,
-        link: "https://www.cbi.ir/showitem/15485.aspx"
-      },
-      {
-        title: "Movafaghiat Magezine",
-        subtitle: "Mobile application for Movafaghiat",
-        time: "Sep 2013",
-        description: `
-          We've built Mobile applciation for Movafaghiat magezine that is one the bigest magezine in Iran  that help people to intract with their magezine.
-        `,
-        link: "https://cafebazaar.ir/app/ir.smgroup.movafagh?l=en"
-      },
-      {
-        title: "Modiryar website",
-        subtitle: "modiryar.com",
-        time: "May 2013",
-        description: `
-          I've built modiryar website with html, css, javascript, jquery, php, mysql, wordpress and Joomla.
-        `,
-        link: "http://www.modiryar.com/"
-      },
-      {
-        title: "Hamshahri News papaer",
-        subtitle: "Ar mobile application",
-        time: "Jan 2013",
-        description: `
-          We've built an augmented reality application for Hamshahri one of biggest news papaer in Iran.
-        `,
-        link: "https://www.youtube.com/watch?v=YrX0Z9LaFhM"
-      },
-      {
-        title: "Atlas Mega mall",
-        subtitle: "Augmented reality application",
-        time: "Jul 2012",
-        description: `
-          We have built Ar application for one of biggest complex in  Mashhad.
-        `,
-        link: "https://rokao.comhttps://cafebazaar.ir/app/com.SMGroup.atlasWeb/?l=en"
-      }
-    ]
-    for (var item of history) {
-      $("#history").append(`
-        <div class="art-timeline-item">
-          <div class="art-timeline-mark-light"></div>
-          <div class="art-timeline-mark"></div>
-          <div class="art-a art-timeline-content">
-            <div class="art-card-header">
-              <div class="art-left-side">
-                <h5>${item.title}</h5>
-                <div class="art-el-suptitle mb-15">${item.subtitle}</div>
+    client.getEntries({
+      content_type: 'homePage',
+    }).then((res) => {
+      if (res.items.length) {
+        const data = res.items[0].fields
+        console.log(data)
+        $("#summery").text(data.summery)
+        const services = data.services
+        for (var item of services) {
+          $("#services").append(`
+            <div class="col-lg-4 col-md-6">
+            <!-- service -->
+            <div class="art-a art-service-icon-box">
+              <!-- service content -->
+              <div class="art-service-ib-content">
+                <!-- title -->
+                <h5 class="mb-15">${item.fields.title}</h5>
+                <!-- text -->
+                <div class="mb-15">${item.fields.desc}</div>
+                <!-- button -->
+                <!-- <div class="art-buttons-frame"><a href="#." class="art-link art-color-link art-w-chevron">Order
+                    now</a></div> -->
               </div>
-              <div class="art-right-side">
-                <span class="art-date">${item.time}</span>
+              <!-- service content end -->
+            </div>
+            <!-- service end -->
+          </div>
+          `)
+        }
+
+
+
+        const history = data.workExp
+        for (var item of history) {
+          item = item.fields
+          $("#history").append(`
+            <div class="art-timeline-item">
+              <div class="art-timeline-mark-light"></div>
+              <div class="art-timeline-mark"></div>
+              <div class="art-a art-timeline-content">
+                <div class="art-card-header">
+                  <div class="art-left-side">
+                    <h5>${item.title}</h5>
+                    <div class="art-el-suptitle mb-15">${item.subtitle}</div>
+                  </div>
+                  <div class="art-right-side">
+                    <span class="art-date">${item.date}</span>
+                  </div>
+                </div>
+                <pre style="color:white">${item.desc}</pre>
+                ${item.link ? `<a href="${item.link}" target="_blank" class="art-link art-color-link art-w-chevron">View</a>` : ''}
               </div>
             </div>
-            <p>${item.description}</p>
-            ${item.link ? `<a href="${item.link}" target="_blank" class="art-link art-color-link art-w-chevron">View</a>` : ''}
-          </div>
-        </div>
-        `)
-    }
-    for (var item of projects) {
-      $("#projects").append(`
-        <div class="art-timeline-item">
-          <div class="art-timeline-mark-light"></div>
-          <div class="art-timeline-mark"></div>
-          <div class="art-a art-timeline-content">
-            <div class="art-card-header">
-              <div class="art-left-side">
-                <h5>${item.title}</h5>
-                <div class="art-el-suptitle mb-15">${item.subtitle}</div>
-              </div>
-              <div class="art-right-side">
-                <span class="art-date">${item.time}</span>
-              </div>
-            </div>
-            <p>${item.description}</p>
-            ${item.link ? `<a href="${item.link}" target="_blank" class="art-link art-color-link art-w-chevron">View</a>` : ''}
-          </div>
-        </div>
-        `)
-    }
+            `)
+        }
+
+        // hero 
+        const dataRotate = data.heroDateRotate
+        $("#text_rotate").attr("data-rotate", JSON.stringify(dataRotate))
+        new Typed('#text_rotate', {
+          strings: dataRotate,
+          typeSpeed: 50,
+        });
+        $("#heroTitle").text(data.heroTItle)
+
+      }
+    })
+
+
+    // var history = [
+    //   {
+    //     title: "Co-founder & CTO",
+    //     subtitle: "Rokao.com - London",
+    //     time: "Jul 2020 - present",
+    //     description: `
+    //     I've working as CTO and Full-Stack developer at Rokao team 
+    //     I also successfully manage over 5 person team member to Develop Rokao
+    //     and responsible to designing backend structure and develop apis 
+    //     and responsible to design Ui pattern and develop front-end with next.js
+    //     `,
+    //     link: "https://rokao.com"
+    //   },
+    //   {
+    //     title: "Co-founder",
+    //     subtitle: "Rojand - Germany",
+    //     time: "Jan 2018 - Apr 2021",
+    //     description: "I've responsible for (Mobile application development & manage Frontend team)  for company projects and we have successfuly delivery over 6 projects"
+    //   },
+    //   {
+    //     title: "Senior Mobile & Frontend Developer",
+    //     subtitle: "Ariana holding (onmiz.com) - Mashhad",
+    //     time: "Nov 2017 - Apr 2021",
+    //     description: "One of Ariana holding project is Miz mobile application that i responsible for develop and testing Mobile applicatoin with react native I've spend 2 years with ariana and we deliver a big and scale project",
+    //     link: "https://onmiz.com"
+    //   },
+    //   {
+    //     title: "Data Scientist and Software Engineer",
+    //     subtitle: "Financial Research and Technology - London",
+    //     time: "Nov 2015 - Apr 2021",
+    //     description: "As software engineer i responsible to create backend api's and manage databases (MongoDb)  we have done lot's of research about forex and Crypto currency in this years and build lots of expert and robots"
+    //   },
+    //   {
+    //     title: "Full-stack developer",
+    //     subtitle: "Zibasoo - Mashhad",
+    //     time: "Jan 2018 - Mar 2020",
+    //     description: "As full-stack developer i've responsible for Manager and build zibasoo backend and mobile application",
+    //     link: "https://www.f6s.com/zibasoo"
+    //   },
+    //   {
+    //     title: "Senior Ios developer",
+    //     subtitle: "HamrahDoctor - Mashhad",
+    //     time: "Sep 2017 - Jan 2017",
+    //     description: "As IOS developer I've responsible to build and develop HamrahDoctor ios application for iphone and Ipad in swift4",
+    //     link: "https://play.google.com/store/apps/details?id=com.hamrahdoctor.patient&hl=en&gl=US"
+    //   },
+    //   {
+    //     title: "Project Manager",
+    //     subtitle: "Win - Mashhad",
+    //     time: "May 2017 - Jul 2017",
+    //     description: "Win is a quiz game in android that I've Mange develop team and developing backend and manage database for them",
+    //     link: "https://cafebazaar.ir/app/com.spresaneh.app?l=en"
+    //   },
+    //   {
+    //     title: "Softwer Engineer",
+    //     subtitle: "Sorush Mehr Rezvan - Mashhad",
+    //     time: "Jun 2012 - May 2017",
+    //     description: "We have building lots of Augmented reality application with unity and C# also I've responsible to develop frontend and backend project (joomla , wodpress , php , jquery , html) projects in this company",
+    //     link: "https://www.smgroup.ir/"
+    //   }
+    // ]
+
+
+
+
+    // var projects = [
+    //   {
+    //     title: "Zibasoo artist",
+    //     subtitle: "Rojand inc",
+    //     time: "Sep 2018",
+    //     description: `
+    //         Zibasoo artist is mobile application for listed beauty saloons to manage thier booking times.
+    //       `,
+    //     link: "https://cafebazaar.ir/app/com.zibasoo_saloons.apps?l=en"
+    //   },
+    //   {
+    //     title: "Zibasoo",
+    //     subtitle: "Rojand inc",
+    //     time: "Sep 2018",
+    //     description: `
+    //         Zibasoo is mobile application that help womans to find best beauty salons in thier area and make them to book appointment with them.
+    //       `,
+    //     link: "https://cafebazaar.ir/app/com.zibasoo.apps?l=en"
+    //   },
+    //   {
+    //     title: "Miz Moile application",
+    //     subtitle: "ariana holding",
+    //     time: "Jan 2018",
+    //     description: `
+    //         Miz is an social network for business  , they can list their services to find by people around them easly with lots of more facily.
+    //       `,
+    //     link: "https://cafebazaar.ir/app/com.onmiz.app?l=en"
+    //   },
+    //   {
+    //     title: "Iran Central Bank Mobile Application",
+    //     subtitle: "Iran Central Bank",
+    //     time: "Jan 2014",
+    //     description: `
+    //       We've built a augmented reality mobile application for Iran Central Bank that scan money to check that is fake or not.
+    //     `,
+    //     link: "https://www.cbi.ir/showitem/15485.aspx"
+    //   },
+    //   {
+    //     title: "Movafaghiat Magezine",
+    //     subtitle: "Mobile application for Movafaghiat",
+    //     time: "Sep 2013",
+    //     description: `
+    //       We've built Mobile applciation for Movafaghiat magezine that is one the bigest magezine in Iran  that help people to intract with their magezine.
+    //     `,
+    //     link: "https://cafebazaar.ir/app/ir.smgroup.movafagh?l=en"
+    //   },
+    //   {
+    //     title: "Modiryar website",
+    //     subtitle: "modiryar.com",
+    //     time: "May 2013",
+    //     description: `
+    //       I've built modiryar website with html, css, javascript, jquery, php, mysql, wordpress and Joomla.
+    //     `,
+    //     link: "http://www.modiryar.com/"
+    //   },
+    //   {
+    //     title: "Hamshahri News papaer",
+    //     subtitle: "Ar mobile application",
+    //     time: "Jan 2013",
+    //     description: `
+    //       We've built an augmented reality application for Hamshahri one of biggest news papaer in Iran.
+    //     `,
+    //     link: "https://www.youtube.com/watch?v=YrX0Z9LaFhM"
+    //   },
+    //   {
+    //     title: "Atlas Mega mall",
+    //     subtitle: "Augmented reality application",
+    //     time: "Jul 2012",
+    //     description: `
+    //       We have built Ar application for one of biggest complex in  Mashhad.
+    //     `,
+    //     link: "https://rokao.comhttps://cafebazaar.ir/app/com.SMGroup.atlasWeb/?l=en"
+    //   }
+    // ]
+
+    // for (var item of projects) {
+    //   $("#projects").append(`
+    //     <div class="art-timeline-item">
+    //       <div class="art-timeline-mark-light"></div>
+    //       <div class="art-timeline-mark"></div>
+    //       <div class="art-a art-timeline-content">
+    //         <div class="art-card-header">
+    //           <div class="art-left-side">
+    //             <h5>${item.title}</h5>
+    //             <div class="art-el-suptitle mb-15">${item.subtitle}</div>
+    //           </div>
+    //           <div class="art-right-side">
+    //             <span class="art-date">${item.time}</span>
+    //           </div>
+    //         </div>
+    //         <p>${item.description}</p>
+    //         ${item.link ? `<a href="${item.link}" target="_blank" class="art-link art-color-link art-w-chevron">View</a>` : ''}
+    //       </div>
+    //     </div>
+    //     `)
+    // }
 
 
     anime({
